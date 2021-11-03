@@ -1,14 +1,13 @@
-;FIRST CODE
-; PAGE-118
+;SUM OF ODD NUMBERS
 .MODEL SMALL
 .DATA
      STR1 DB "ENTER THE VALUE OF N : $"
-     STR2 DB "SUM OF EVEN NUMBERS : $"
+     STR2 DB "SUM OF ODD NUMBERS : $"
       
      N DB '?'
      SUM DB 0H    ;
      COUNTER DB 0H ; USED FOR LOOP TRACK
-     TEMP DB 0H   ;  FIND EVEN NUMBERS
+     TEMP DB 0H   ;  FIND ODD NUMBERS
      
      
 ENDS
@@ -36,7 +35,7 @@ MAIN PROC
     MOV AL,0DH     ; CRRIAGE RETURN
     INT 21H
      
-    MOV BL,0H 
+    MOV BL,1H       ; starts with 1
      
     MOV CX,0       ; INFINITE LOOP
     
@@ -47,7 +46,7 @@ MAIN PROC
        
        ADD SUM,BL
        
-       ADD BL,2H     ; 0 + 2 + 4 + 6 + 8 +..
+       ADD BL,2H     ; 1 + 3 + 5 + 7 + 9 +..
        
        INC COUNTER
        
